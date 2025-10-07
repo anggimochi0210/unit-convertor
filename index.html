@@ -1,31 +1,104 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Unit Convertor</title>
-    </head>
-    <body>
-        <h1>This website can convert the unit to other unit that you want</h1>
-        <h2>There are 3 sections that you can convert unit area, lenght, and weight</h2>
-        <h3>length section</h3>
-        <button id="len-convert-button">Convert</button>
-        <input type="number" id="len-input" placeholder="Enter length">
+<head>
+  <title>Unit Converter</title>
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #74ABE2, #5563DE);
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
 
-        <select id="From-unit">
-        <option id="Centimeter">Centimeter</option>
-        <option id="Inch">Inch</option>
-        <option id="Foot">Foot</option>
-        <option id="Meter">Meter</option>
-        <option id="Mile">Mile</option>
-        </select>
+    .converter-container {
+      background: rgba(255, 255, 255, 0.15);
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      width: 400px;
+    }
 
-        <select id="To-unit">
-        <option id="Centimeter">Centimeter</option>
-        <option id="Inch">Inch</option>
-        <option id="Foot">Foot</option>
-        <option id="Meter">Meter</option>
-        <option id="Mile">Mile</option>
-        </select>
+    h1 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
 
-        <input type="number" id="len-output">
-    </body>
+    h2 {
+      font-size: 16px;
+      font-weight: normal;
+      margin-bottom: 30px;
+      color: #e0e0e0;
+    }
+
+    .section-title {
+      font-size: 18px;
+      margin-bottom: 15px;
+      color: #fff;
+    }
+
+    input, select, button {
+      margin: 10px 0;
+      padding: 10px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+    }
+
+    input, select {
+      width: 80%;
+    }
+
+    button {
+      background-color: #00C897;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #009E75;
+    }
+
+    #len-output {
+      background: #fff;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <div class="converter-container">
+    <h1>Unit Converter</h1>
+    <h2>Convert between area, length, and weight easily!</h2>
+
+    <div class="length-section">
+      <h3 class="section-title">Length Conversion</h3>
+      <input type="number" id="len-input" placeholder="Enter length">
+      <br>
+      <select id="From-unit">
+        <option>Centimeter</option>
+        <option>Inch</option>
+        <option>Foot</option>
+        <option>Meter</option>
+        <option>Mile</option>
+      </select>
+      <br>
+      <select id="To-unit">
+        <option>Centimeter</option>
+        <option>Inch</option>
+        <option>Foot</option>
+        <option>Meter</option>
+        <option>Mile</option>
+      </select>
+      <br>
+      <button id="len-convert-button">Convert</button>
+      <br>
+      <input type="number" id="len-output" placeholder="Result">
+    </div>
+  </div>
+</body>
 </html>
