@@ -68,38 +68,85 @@
       background: #fff;
       color: #333;
     }
+
+    /* Toggle switch styling */
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 60px;
+      height: 34px;
+    }
+
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      transition: 0.4s;
+      border-radius: 34px;
+    }
+
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 26px;
+      width: 26px;
+      left: 4px;
+      bottom: 4px;
+      background-color: white;
+      transition: 0.4s;
+      border-radius: 50%;
+    }
+
+    input:checked + .slider {
+      background-color: #00C897;
+    }
+
+    input:checked + .slider:before {
+      transform: translateX(26px);
+    }
+
+    .mode-label {
+      font-size: 14px;
+      margin-top: 10px;
+    }
   </style>
 </head>
 <body>
   <div class="converter-container">
     <h1>Unit Converter</h1>
-    <h2>Convert between area, length, and weight easily!</h2>
+    <h2>Convert between Length and Temperature!</h2>
 
-    <div class="length-section">
-      <h3 class="section-title">Length Conversion</h3>
-      <input type="number" id="len-input" placeholder="Enter length">
+    <!-- Toggle for switching mode -->
+    <label class="switch">
+      <input type="checkbox" id="mode-toggle">
+      <span class="slider"></span>
+    </label>
+    <div class="mode-label" id="mode-label">Mode: Length</div>
+
+    <div class="conversion-section">
+      <h3 class="section-title" id="section-title">Length Conversion</h3>
+      <input type="number" id="input-value" placeholder="Enter value">
       <br>
-      <select id="From-unit">
-        <option>Centimeter</option>
-        <option>Inch</option>
-        <option>Foot</option>
-        <option>Meter</option>
-        <option>Mile</option>
-      </select>
+      <select id="from-unit"></select>
       <br>
-      <select id="To-unit">
-        <option>Centimeter</option>
-        <option>Inch</option>
-        <option>Foot</option>
-        <option>Meter</option>
-        <option>Mile</option>
-      </select>
+      <select id="to-unit"></select>
       <br>
-      <button id="len-convert-button">Convert</button>
+      <button id="convert-button">Convert</button>
       <br>
-      <input type="number" id="len-output" placeholder="Result">
+      <input type="text" id="output-value" placeholder="Result" readonly>
     </div>
   </div>
+
   <script src="logic.js"></script>
 </body>
 </html>
